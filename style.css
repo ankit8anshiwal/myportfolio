@@ -1,0 +1,369 @@
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body, html {
+  width:100%; min-height:100%;
+  font-family:'Segoe UI', sans-serif;
+  font-size:18px; line-height:1.6;
+  overflow-x:hidden;
+  background:#87CEFA; /* sky blue background */
+  color:hsla(270, 6%, 93%, 0.916);
+}
+
+h3 {
+  color: rgba(29, 243, 79, 0.908); /* changes all h3 heading text to red */
+}
+
+/* Background puzzle */
+.background {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: url('blue-puzzle.jpg') repeat center center;
+  background-size: 250px 250px;
+  z-index:0;
+  filter: brightness(0.3);
+}
+
+/* Spark canvas */
+#sparkCanvas {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:all;
+  z-index:1;
+}
+
+/* Container */
+.book-container {
+  position: relative;
+  z-index:2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 20px;
+  align-items: center;
+}
+
+
+
+/* Glass sections */
+.glass-section {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(194, 193, 212, 0);
+  border-radius: 15px;
+  padding: 40px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(4, 36, 84, 0.711);
+  box-shadow: 0 0 25px rgba(232, 232, 50, 0.75), 0 0 25px rgba(245, 232, 87, 0.864);
+  text-align: center;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+   
+  
+}
+
+/* Hover glow */
+.glass-section:hover {
+  transform: scale(1.05); box-shadow: 0 0 35px rgba(243, 242, 239, 0.835), 0 0 35px rgba(244, 243, 243, 0.9);
+  
+}
+
+/* Water text animation */
+.water-text {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #e5e9ea,#00f0ff,#eff1f2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textPlay 3s infinite linear;
+}
+@keyframes textPlay {
+  0%,100% {background-position:0% 50%; transform:translateY(0);}
+  25% {transform:translateY(-2px);}
+  50% {transform:translateY(2px);}
+  75% {transform:translateY(-1px);}
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-content p {max-width: 600px; text-align: center;}
+
+/* Photo container */
+.photo-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(238, 234, 208, 0.743);
+  box-shadow: 0 0 20px rgba(14, 12, 0, 0.686), 0 0 15px rgba(4, 0, 0, 0.713);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-container img {width: 100%; height: 100%; object-fit: cover;}
+.photo-container:hover {transform: scale(1.4); box-shadow: 0 0 30px rgba(34, 89, 228, 0.7), 0 0 25px rgba(192,192,192,0.6);}
+
+/* Responsive layout */
+@media(min-width:900px){
+  .about-content {flex-direction: row; text-align:left;}
+  .about-content p {margin-left:30px;}
+}
+
+/* Card grids */
+.service-grid, .project-grid {
+  display:flex; flex-wrap:wrap; justify-content:center; gap:30px;
+}
+
+.glass-card {
+  width: 250px;
+  background: rgba(135,206,250,0.2);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,215,0,0.3);
+  box-shadow: 0 0 20px rgba(18, 18, 14, 0.5), 0 0 20px rgba(12, 11, 11, 0.388);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align:center;
+}
+
+.glass-card:hover {transform: scale(1.1) ;box-shadow: 0 0 35px rgba(65, 98, 241, 0.7), 0 0 35px rgba(192,192,192,0.5);}
+
+/* Contact Form */
+.contact-form {display:flex; flex-direction:column; gap:15px;}
+.contact-form input, .contact-form textarea {
+  background: rgba(135,206,250,0.2);
+  border:1px solid rgba(255,215,0,0.4);
+  border-radius:8px; padding:12px; color:#00f0ff; backdrop-filter: blur(5px); font-size:16px;
+}
+.contact-form button {
+  background: rgba(0,240,255,0.1);
+  border:1px solid #121312;
+  border-radius:8px; color:#caed08; padding:12px; font-weight:bold; cursor:pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.contact-form button:hover {
+  box-shadow:0 0 20px rgba(232, 233, 234, 0.7), 0 0 20px rgba(244, 242, 242, 0.5);
+  transform:translateY(-2px);
+}/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body, html {
+  width:100%; min-height:100%;
+  font-family:'Segoe UI', sans-serif;
+  font-size:18px; line-height:1.6;
+  overflow-x:hidden;
+  background:#87CEFA; /* Sky blue */
+  color:hsla(270, 6%, 93%, 0.916);
+  scroll-behavior:smooth;
+}
+
+/* Headings */
+h3 {
+  color: rgba(29, 243, 79, 0.908);
+  text-shadow: 0 0 6px rgba(29,243,79,0.6);
+}
+
+/* Background puzzle */
+.background {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: url('blue-puzzle.jpg') repeat center center;
+  background-size: 250px 250px;
+  z-index:0;
+  filter: brightness(0.3);
+}
+
+/* Spark canvas */
+#sparkCanvas {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none; /* sparks shouldn’t block clicks */
+  z-index:1;
+}
+
+/* Container */
+.book-container {
+  position: relative;
+  z-index:2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 20px;
+  align-items: center;
+}
+
+/* Glass sections */
+.glass-section {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(194, 193, 212, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(4, 36, 84, 0.5);
+  box-shadow: 0 0 25px rgba(232, 232, 50, 0.65), 0 0 25px rgba(245, 232, 87, 0.75);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Hover glow */
+.glass-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255,255,255,0.85), 0 0 35px rgba(192,192,192,0.8);
+}
+
+/* Water text animation */
+.water-text {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #e5e9ea,#00f0ff,#eff1f2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textPlay 3s infinite linear;
+}
+@keyframes textPlay {
+  0%,100% {background-position:0% 50%; transform:translateY(0);}
+  25% {transform:translateY(-2px);}
+  50% {transform:translateY(2px);}
+  75% {transform:translateY(-1px);}
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.about-content p {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Photo container */
+.photo-container {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(238, 234, 208, 0.7);
+  box-shadow: 0 0 20px rgba(0,0,0,0.6), 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo-container img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.photo-container:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 30px rgba(34, 89, 228, 0.7), 0 0 25px rgba(192,192,192,0.6);
+}
+
+/* Responsive layout */
+@media(min-width:900px){
+  .about-content {flex-direction: row; text-align:left;}
+  .about-content p {margin-left:30px;}
+}
+
+/* Card grids */
+.service-grid, .project-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+}
+
+.glass-card {
+  width: 250px;
+  background: rgba(135,206,250,0.2);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,215,0,0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 20px rgba(12,11,11,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align:center;
+}
+.glass-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(65, 98, 241, 0.7), 0 0 35px rgba(192,192,192,0.6);
+}
+
+/* Contact Form */
+.contact-form {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.contact-form input, .contact-form textarea {
+  background: rgba(255,255,255,0.95);
+  border:1px solid rgba(255,215,0,0.4);
+  border-radius:8px;
+  padding:12px;
+  color:#0077ff;
+  font-size:16px;
+  backdrop-filter: blur(5px);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color:#00c6ff;
+  box-shadow:0 0 8px rgba(0,198,255,0.6);
+  outline:none;
+}
+
+/* Button Base */
+.contact-form button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f1f111, #c4ce0d);
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(252, 228, 12, 0.704);
+}
+
+/* Ripple Effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+.footer {
+  text-align:center;
+  color:#bedee1;
+  padding:20px 0;
+  font-size:14px;
+  opacity:0.8;
+}
+
+
+/* Footer */
+.footer {text-align:center; color:#bedee1; padding:20px 0;}
